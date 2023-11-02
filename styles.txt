@@ -1,0 +1,212 @@
+styles1:
+    clrs = ['#6B8B8F', '#B4EAF0']
+    backgroundColor:"#6B8B8F"
+    color(text,blocks):"#234952"
+
+styles2:
+    фон:#800000
+
+styles3:
+
+styles4:
+    блоки:#0D0091
+
+
+
+import { useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
+
+const [stl,sstyle] = useState("0")
+var clrs = ['#E7EDFF', '#FFFFFF']
+
+var styles = styles3
+AsyncStorage.getItem("style").then(value => {
+  sstyle(value)
+})
+
+if (stl == "4"){
+  styles = styles4
+  clrs = ["black","black"]
+}else   if (stl == "3"){
+  styles = styles3
+  clrs = ['#E7EDFF', '#FFFFFF']
+}else   if (stl == "2"){
+  styles = styles2
+  clrs = ["#800000","#800000"]
+}else{
+  styles = styles3
+  clrs = ['#E7EDFF', '#FFFFFF']
+}
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+   <ScrollView>
+            <Text style={styles.title}>Чтобы добавить в корзину нажмите на название</Text>
+
+            <Text style={styles.title}>Бургеры</Text>
+            <ScrollView style={styles.line} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <View style={styles.item2}>
+                </View>
+                <View style={styles.item2}>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sb1}>Чикен фреш</Text>
+                    <Text style={styles.text}>175р</Text>
+                    <Text style={styles.text}>{b1s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title} onPress={sb2}>Гамбургер</Text>
+                    <Text style={styles.text}>100р</Text>
+                    <Text style={styles.text}>{b2s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title} onPress={sb3}>Чизбургер</Text>
+                    <Text style={styles.text}>110р</Text>
+                    <Text style={styles.text}>{b3s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title} onPress={sb4}>Дабл биф</Text>
+                    <Text style={styles.text}>190р</Text>
+                    <Text style={styles.text}>{b4s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title} onPress={sb5}>Биф бургер</Text>
+                    <Text style={styles.text}>205р</Text>
+                    <Text style={styles.text}>{b5s}</Text>
+                </View>
+            </ScrollView>
+
+
+
+            <Text style={styles.title}>Роллы</Text>
+            <ScrollView style={styles.line} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <View style={styles.item2}>
+                </View>
+                <View style={styles.item2}>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sr1}>Фреш ролл</Text>
+                    <Text style={styles.text}>150р</Text>
+                    <Text style={styles.text}>{r1s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sr2}>Цезарь ролл</Text>
+                    <Text style={styles.text}>150р</Text>
+                    <Text style={styles.text}>{r2s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sr3}>Биф ролл</Text>
+                    <Text style={styles.text}>110р</Text>
+                    <Text style={styles.text}>{r3s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sr4}>BBQ ролл</Text>
+                    <Text style={styles.text}>190р</Text>
+                    <Text style={styles.text}>{r4s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sr5}>Стейк ролл</Text>
+                    <Text style={styles.text}>180р</Text>
+                    <Text style={styles.text}>{r5s}</Text>
+                </View>
+            </ScrollView>
+
+
+
+            <Text style={styles.title}>Шаверма</Text>
+            <ScrollView style={styles.line3} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <View style={styles.item2}>
+                </View>
+                <View style={styles.item2}>
+                </View>
+                <View style={styles.item3}>
+                    <Text style={styles.title0} onPress={ss1}>Пита с картошкой</Text>
+                    <Text style={styles.text}>160р</Text>
+                    <Text style={styles.text}>{s1s}</Text>
+                </View>
+                <View style={styles.item3}>
+                    <Text style={styles.title0} onPress={ss2}>Шаурма с курицей</Text>
+                    <Text style={styles.text}>185р</Text>
+                    <Text style={styles.text}>{s2s}</Text>
+                </View>
+                <View style={styles.item3}>
+                    <Text style={styles.title0} onPress={ss3}>Шаурма греческая</Text>
+                    <Text style={styles.text}>200р</Text>
+                    <Text style={styles.text}>{s3s}</Text>
+                </View>
+                <View style={styles.item3}>
+                    <Text style={styles.title0} onPress={ss4}>Шаурма фирменная</Text>
+                    <Text style={styles.text}>205</Text>
+                    <Text style={styles.text}>{s4s}</Text>
+                </View>
+                <View style={styles.item3}>
+                    <Text style={styles.title0} onPress={ss5}>Шаурма маг-тести</Text>
+                    <Text style={styles.text}>220р</Text>
+                    <Text style={styles.text}>{s5s}</Text>
+                </View>
+            </ScrollView>
+
+
+
+            <Text style={styles.title}>Пицца</Text>
+            <ScrollView style={styles.line} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <View style={styles.item2}>
+                </View>
+                <View style={styles.item2}>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sp1}>Сборная</Text>
+                    <Text style={styles.text}>125р</Text>
+                    <Text style={styles.text}>{p1s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sp2}>Цезарь</Text>
+                    <Text style={styles.text}>130р</Text>
+                    <Text style={styles.text}>{p2s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sp3}>Три сыра</Text>
+                    <Text style={styles.text}>150р</Text>
+                    <Text style={styles.text}>{p3s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sp4}>С курицей</Text>
+                    <Text style={styles.text}>115р</Text>
+                    <Text style={styles.text}>{p4s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sp5}>Грибная</Text>
+                    <Text style={styles.text}>115р</Text>
+                    <Text style={styles.text}>{p5s}</Text>
+                </View>
+            </ScrollView>
+
+
+            <Text style={styles.title}>Напитки</Text>
+            <ScrollView style={styles.line} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sw1}>Морс</Text>
+                    <Text style={styles.text}>60</Text>
+                    <Text style={styles.text}>{w1s}</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.title0} onPress={sw2}>Айран</Text>
+                    <Text style={styles.text}>70</Text>
+                    <Text style={styles.text}>{w2s}</Text>
+                </View>
+            </ScrollView>
